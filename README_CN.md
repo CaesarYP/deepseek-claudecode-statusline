@@ -47,6 +47,8 @@ chmod 600 ~/.deepseek_balance_key
 
 ## 配置
 
+以下所有选项都写入和第 2 步相同的配置文件 — `~/.claude/settings.json` 或 `.claude/settings.local.json`。将它们与你已有的 `statusLine` 块合并即可。
+
 ### 语言
 
 设置环境变量 `DEEPSEEK_BALANCE_LANG`。默认：`zh`（中文）。
@@ -95,6 +97,31 @@ API 调用间隔（秒）。默认 `120`（2 分钟）。
 {
   "statusLine": {
     "refreshInterval": 300
+  }
+}
+```
+
+### 完整示例
+
+一份真实的 `~/.claude/settings.json`，同时包含状态行、余额语言/货币配置、以及 DeepSeek API 路由：
+
+```json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-your-deepseek-api-key",
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
+    "DEEPSEEK_BALANCE_LANG": "zh",
+    "DEEPSEEK_BALANCE_CURRENCY": "CNY"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/deepseek-claudecode-statusline/statusline-deepseek.sh",
+    "refreshInterval": 120
   }
 }
 ```

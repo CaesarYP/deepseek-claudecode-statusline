@@ -47,6 +47,8 @@ Start a new Claude Code session. The balance will appear below the input box.
 
 ## Configuration
 
+All options below go in the same settings file as step 2 — `~/.claude/settings.json` or `.claude/settings.local.json`. Merge them with your existing `statusLine` block.
+
 ### Language
 
 Set `DEEPSEEK_BALANCE_LANG` env var. Default: `zh` (Chinese).
@@ -95,6 +97,31 @@ Seconds between API calls. Default: `120` (2 minutes).
 {
   "statusLine": {
     "refreshInterval": 300
+  }
+}
+```
+
+### Complete example
+
+A realistic `~/.claude/settings.json` with statusline, DeepSeek balance env vars, and DeepSeek API routing all together:
+
+```json
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-your-deepseek-api-key",
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
+    "DEEPSEEK_BALANCE_LANG": "zh",
+    "DEEPSEEK_BALANCE_CURRENCY": "CNY"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/deepseek-claudecode-statusline/statusline-deepseek.sh",
+    "refreshInterval": 120
   }
 }
 ```
