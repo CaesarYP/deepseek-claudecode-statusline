@@ -72,9 +72,9 @@ for b in d.get('balance_infos', []):
     granted = float(b['granted_balance'])
     topped = float(b['topped_up_balance'])
     if lang == 'en':
-        lines.append(f'{total:.2f}{currency} top-up:{topped:.0f} grant:{granted:.0f}')
+        lines.append(f'{total:.2f}{currency} top-up:{topped:.2f} grant:{granted:.2f}')
     else:
-        lines.append(f'{total:.2f}{currency} 充值:{topped:.0f} 赠金:{granted:.0f}')
+        lines.append(f'{total:.2f}{currency} 充值:{topped:.2f} 赠金:{granted:.2f}')
 
 if not lines:
     if lang == 'en':
