@@ -7,13 +7,13 @@
 ## 效果
 
 ```
-DeepSeek: 9.74CNY 充值:10 赠金:0
+DeepSeek: 9.74CNY 充值:9.74 赠金:0
 ```
 
 英文模式：
 
 ```
-DeepSeek: 9.74CNY top-up:10 grant:0
+DeepSeek: 9.74CNY top-up:9.74 grant:0
 ```
 
 ## 快速开始

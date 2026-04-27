@@ -7,13 +7,13 @@ Display your [DeepSeek API](https://platform.deepseek.com/) balance right below 
 ## How it looks
 
 ```
-DeepSeek: 9.74CNY 充值:10 赠金:0
+DeepSeek: 9.74CNY 充值:9.74 赠金:0
 ```
 
 or in English:
 
 ```
-DeepSeek: 9.74CNY top-up:10 grant:0
+DeepSeek: 9.74CNY top-up:9.74 grant:0
 ```
 
 ## Quick start
@@ -148,3 +148,4 @@ A realistic `~/.claude/settings.json` with statusline, DeepSeek balance env vars
 ## License
 
 MIT
+
